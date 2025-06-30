@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Eletromecânica - Excelência Automotiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bleu': '#0055A4',
+                        'rouge': '#EF4135',
+                        'blanc': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,85,164,0.3);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0055A4 0%, #FFFFFF 50%, #EF4135 100%);
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-20 xl:px-24 2xl:px-28 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-8 bg-bleu rounded"></div>
+                        <div class="w-3 h-8 bg-white border border-gray-300 rounded"></div>
+                        <div class="w-3 h-8 bg-rouge rounded"></div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-bleu">Louis Eletromecânica</h1>
+                        <p class="text-sm text-gray-600">Vitória da Conquista</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-bleu transition-colors">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-bleu transition-colors">Serviços</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-bleu transition-colors">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-bleu transition-colors">Contato</a>
+                    <a href="https://wa.me/5577988194535" target="_blank" 
+                       class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 font-semibold">
+                        WhatsApp
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center hero-bg relative pt-20">
+        <div class="absolute inset-0 bg-white/90"></div>
+        <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-20 xl:px-24 2xl:px-28 relative z-10">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-10 leading-tight text-center">
+    <span class="block text-bleu">LOUIS</span>
+    <span class="block text-gray-800 text-3xl sm:text-4xl md:text-5xl">ELETROMECÂNICA</span>
+</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Especialistas em <strong class="text-bleu">sistemas elétricos</strong> e 
+                    <strong class="text-rouge">mecânica automotiva</strong>. 
+                    Qualidade e confiança há anos em Vitória da Conquista.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="https://wa.me/5577988194535?text=Olá! Preciso de atendimento para meu veículo." 
+                       target="_blank"
+                       class="bg-bleu hover:bg-blue-700 text-white px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        📞 Ligar Agora
+                    </a>
+                    <a href="#servicos"
+                       class="border-2 border-rouge text-rouge hover:bg-rouge hover:text-white px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg rounded-full text-lg font-bold transition-all duration-300">
+                        Ver Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-bleu mb-2">15+</div>
+                    <p class="text-gray-600">Anos de Experiência</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-rouge mb-2">1000+</div>
+                    <p class="text-gray-600">Veículos Atendidos</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-bleu mb-2">98%</div>
+                    <p class="text-gray-600">Satisfação dos Clientes</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-rouge mb-2">24h</div>
+                    <p class="text-gray-600">Suporte WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6">
+                    Nossos <span class="text-rouge">Serviços</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Oferecemos soluções completas para manter seu veículo sempre em perfeito funcionamento
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-bleu/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-bleu mb-4">Sistema Elétrico</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Diagnóstico computadorizado</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Reparo de chicotes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Sistema de ignição</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Instalação de acessórios</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Gostaria de saber mais sobre serviços de sistema elétrico" 
+                       target="_blank"
+                       class="text-bleu hover:text-blue-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-rouge/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔧</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-rouge mb-4">Mecânica Geral</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Revisão completa</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Troca de óleo e filtros</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Sistema de freios</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Suspensão e direção</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Gostaria de saber mais sobre serviços de mecânica geral" 
+                       target="_blank"
+                       class="text-rouge hover:text-red-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-bleu/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔋</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-bleu mb-4">Bateria & Alternador</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Teste de bateria</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Recarga e manutenção</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Reparo de alternador</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Sistema de carga</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Gostaria de saber mais sobre serviços de bateria e alternador" 
+                       target="_blank"
+                       class="text-bleu hover:text-blue-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-rouge/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🚗</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-rouge mb-4">Motor</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Retífica de motor</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Regulagem de válvulas</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Sistema de arrefecimento</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Injeção eletrônica</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Gostaria de saber mais sobre serviços de motor" 
+                       target="_blank"
+                       class="text-rouge hover:text-red-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-bleu/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔍</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-bleu mb-4">Diagnóstico</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Scanner automotivo</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Análise de falhas</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Teste de componentes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-bleu rounded-full mr-3"></span>Relatório técnico</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Gostaria de saber mais sobre serviços de diagnóstico" 
+                       target="_blank"
+                       class="text-bleu hover:text-blue-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="service-card p-8 rounded-3xl border border-gray-200">
+                    <div class="w-16 h-16 bg-rouge/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🚨</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-rouge mb-4">Emergência</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Atendimento rápido</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Diagnóstico no local</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Soluções imediatas</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-rouge rounded-full mr-3"></span>Disponível 24h</li>
+                    </ul>
+                    <a href="https://wa.me/5577988194535?text=Preciso de atendimento de emergência!" 
+                       target="_blank"
+                       class="text-rouge hover:text-red-700 font-semibold">
+                        Saiba mais →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl font-bold mb-8">
+                        <span class="text-bleu">Tradição</span> e 
+                        <span class="text-rouge">Qualidade</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        A Louis Eletromecânica nasceu da paixão por automóveis e do compromisso 
+                        com a excelência. Combinamos técnicas tradicionais com tecnologia moderna 
+                        para oferecer o melhor atendimento automotivo de Vitória da Conquista.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-bleu rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Profissionais Qualificados</h4>
+                                <p class="text-gray-600">Equipe especializada com anos de experiência</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-rouge rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Equipamentos Modernos</h4>
+                                <p class="text-gray-600">Tecnologia de ponta para diagnósticos precisos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-bleu rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Garantia Total</h4>
+                                <p class="text-gray-600">Todos os serviços com garantia e suporte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-bleu to-rouge p-12 rounded-3xl text-white text-center">
+                        <div class="text-6xl mb-6">🏆</div>
+                        <h3 class="text-3xl font-bold mb-4">Nossa Missão</h3>
+                        <p class="text-xl leading-relaxed">
+                            Proporcionar soluções automotivas de excelência, 
+                            mantendo seu veículo sempre seguro e confiável.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6">
+                    Entre em <span class="text-bleu">Contato</span>
+                </h2>
+                <p class="text-xl text-gray-600">Estamos prontos para atender você</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                <div class="text-center p-8 bg-gray-50 rounded-3xl">
+                    <div class="w-20 h-20 bg-bleu rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">📍</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-bleu">Localização</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        R. Inácio José de Alvarenga, 47<br>
+                        Boa Vista, Vitória da Conquista - BA<br>
+                        CEP: 45027-212
+                    </p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-3xl">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">📱</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-600">WhatsApp</h3>
+                    <a href="https://wa.me/5577988194535" target="_blank" 
+                       class="text-2xl font-bold text-green-600 hover:text-green-700 transition-colors block mb-2">
+                        (77) 98819-4535
+                    </a>
+                    <p class="text-gray-600">Clique para conversar</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-3xl">
+                    <div class="w-20 h-20 bg-rouge rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🕒</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-rouge">Horários</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p><strong>Seg - Sex:</strong> 7:00 - 18:00</p>
+                        <p><strong>Sábado:</strong> 7:00 - 12:00</p>
+                        <p><strong>Domingo:</strong> Fechado</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16">
+                <a href="https://wa.me/5577988194535?text=Olá! Gostaria de agendar um serviço para meu veículo." 
+                   target="_blank"
+                   class="inline-block bg-gradient-to-r from-bleu to-rouge hover:from-blue-700 hover:to-red-600 text-white px-12 py-4 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    🚗 Agendar Serviço Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-10 bg-bleu rounded"></div>
+                        <div class="w-4 h-10 bg-white rounded"></div>
+                        <div class="w-4 h-10 bg-rouge rounded"></div>
+                    </div>
+                    <h4 class="text-3xl font-bold">Louis Eletromecânica</h4>
+                </div>
+                <p class="text-gray-400 text-lg mb-8">
+                    Excelência automotiva com qualidade francesa no coração da Bahia
+                </p>
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <span class="text-4xl">🇫🇷</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="text-4xl">🇧🇷</span>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500">
+                        © 2024 Louis Eletromecânica. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'957cd2f744943214',t:'MTc1MTI3NzcwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
